@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>HistoricalData</AssemblyName>
+    <ApplicationIcon />
+    <Win32Resource />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Description>Provides easy access to the Nasdaq, Yahoo Finance, and WallStreet Journal API for historical stock data.
+Gives Biographical info on an Asset from the Nasdaq Asset info API.</Description>
+    <Authors>OpenSource BlackBox Trading</Authors>
+    <Company>OpenSource BlackBox Trading</Company>
+    <Product>Stock and ETF Historical Data</Product>
+    <Copyright>none</Copyright>
+    <PackageTags>Historical Data; Stock Data; ETF Data; Nasdaq; Yahoo Finance; WallStreet Journal; Stock Trading; Historical Data API</PackageTags>
+    <SignAssembly>true</SignAssembly>
+    <PackageId>StockETFHistoricalData</PackageId>
+    <PackageLicenseFile>OpenSourceLicense.txt</PackageLicenseFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\Administrator\Source\Repos\NasdaqAssetData\HistoricalData.xml</DocumentationFile>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="OpenSourceLicense.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

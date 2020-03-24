@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HistoricalData</name>
+    </assembly>
+    <members>
+        <member name="T:HistoricalData.Asset">
+            <summary>
+            Investment Asset of a Stock or ETF
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Asset.Date">
+            <summary>
+            Date element of the Historical quote
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Asset.Open">
+            <summary>
+            Price at offical market open
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Asset.High">
+            <summary>
+            High price of the day
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Asset.Low">
+            <summary>
+            Low price of the day
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Asset.Close">
+            <summary>
+            Price  at offical market close
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Asset.AdjClose">
+            <summary>
+            Adjusted close price adjusted for both dividends and splits.
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Asset.Volume">
+            <summary>
+            Number of shares traded during market session
+            </summary>
+        </member>
+        <member name="T:HistoricalData.Biographical.AssetInfo">
+            <summary>
+            Biographical information based on Nasdaq data.
+            </summary>
+        </member>
+        <member name="M:HistoricalData.Biographical.AssetInfo.#ctor(System.String)">
+            <summary>
+            Biographical information based on Nasdaq data.
+            </summary>
+            <param name="symbol">Ticker ID for the desired asset.</param>
+        </member>
+        <member name="P:HistoricalData.Biographical.AssetInfo.Symbol">
+            <summary>
+            Ticker symbol for the Asset
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Biographical.AssetInfo.CompanyName">
+            <summary>
+            Formal company name of the Asset.
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Biographical.AssetInfo.StockType">
+            <summary>
+            Asset equity type.
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Biographical.AssetInfo.Exchange">
+            <summary>
+            Primary Exchange the Asset is traded.
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Biographical.AssetInfo.IsNasdaqListed">
+            <summary>
+            Asset is list on the Nasdaq exchange.
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Biographical.AssetInfo.IsNasdaq100">
+            <summary>
+            Asset is part of the Nasdaq 100 Index.
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Biographical.AssetInfo.LastSalePrice">
+            <summary>
+            Last sale price in USD for Asset, current price if IsRealTime == True.
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Biographical.AssetInfo.NetChange">
+            <summary>
+            Absolute value change of Asset in USD during the trading session. 
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Biographical.AssetInfo.PercentChange">
+            <summary>
+            Percentage change of Asset value (absolute) during the trading session. 
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Biographical.AssetInfo.Delta">
+            <summary>
+            Delta is the ratio that compares the change in the price of an asset, usually a marketable security, to the corresponding change in the price of its derivative. 
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Biographical.AssetInfo.LastTradeTime">
+            <summary>
+            DateTime object of the last recorded trade.
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Biographical.AssetInfo.IsRealTime">
+            <summary>
+            Returns true if the data is being actively updated at present.
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Biographical.AssetInfo.AssetClass">
+            <summary>
+            Defines the Asset. ie. Stocks or ETF
+            </summary>
+        </member>
+        <member name="M:HistoricalData.Biographical.AssetInfo.GetInfo">
+            <summary>
+            retrieves the Json file with biographical info via API call to Nasdaq. 
+            </summary>
+            <returns>API results</returns>
+        </member>
+        <member name="T:HistoricalData.Source.Nasdaq">
+            <summary>
+            Returns up to 10 years (from current date) of historical data.
+            </summary>
+        </member>
+        <member name="M:HistoricalData.Source.Nasdaq.#ctor(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Returns up to 10 years (from current date) of historical data from Nasdaq API
+            </summary>
+            <param name="symbol">"Ticker ID for the desired asset."</param>
+            <param name="start">Beginning of query date range.</param>
+            <param name="end">End of query date range.</param>
+        </member>
+        <member name="P:HistoricalData.Source.Nasdaq.Assets">
+            <summary>
+            Array of Asset objects returned from query. 
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.Nasdaq.DateArray">
+            <summary>
+            Array of the Datetime objects
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.Nasdaq.OpenArray">
+            <summary>
+            Array of the Open price values
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.Nasdaq.HighArray">
+            <summary>
+            Array of the High price values
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.Nasdaq.LowArray">
+            <summary>
+            Array of the Low price values
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.Nasdaq.CloseArray">
+            <summary>
+            Array of the Close price values 
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.Nasdaq.VolumeArray">
+            <summary>
+            Array of the Volume values
+            </summary>
+        </member>
+        <member name="T:HistoricalData.Source.WallStreetJournal">
+            <summary>
+            Returns historical data from the WallStreet Journal
+            </summary>
+        </member>
+        <member name="M:HistoricalData.Source.WallStreetJournal.#ctor(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Returns historical data from WallStreet Journal API
+            </summary>
+            <param name="symbol">"Ticker ID for the desired asset."</param>
+            <param name="start">Beginning of query date range.</param>
+            <param name="end">End of query date range.</param>
+        </member>
+        <member name="P:HistoricalData.Source.WallStreetJournal.Assets">
+            <summary>
+            Array of Asset objects returned from query. 
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.WallStreetJournal.DateArray">
+            <summary>
+            Array of the Datetime objects
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.WallStreetJournal.OpenArray">
+            <summary>
+            Array of the Open price values
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.WallStreetJournal.HighArray">
+            <summary>
+            Array of the High price values
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.WallStreetJournal.LowArray">
+            <summary>
+            Array of the Low price values
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.WallStreetJournal.CloseArray">
+            <summary>
+            Array of the Close price values 
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.WallStreetJournal.VolumeArray">
+            <summary>
+            Array of the Volume values
+            </summary>
+        </member>
+        <member name="T:HistoricalData.Source.Yahoo">
+            <summary>
+            Returns historical data from Yahoo Finance
+            </summary>
+        </member>
+        <member name="M:HistoricalData.Source.Yahoo.#ctor(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Returns historical data from Yahoo Finance API.
+            </summary>
+            <param name="symbol">"Ticker ID for the desired asset."</param>
+            <param name="start">Beginning of query date range.</param>
+            <param name="end">End of query date range.</param>
+        </member>
+        <member name="P:HistoricalData.Source.Yahoo.DateArray">
+            <summary>
+            Array of the Datetime objects
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.Yahoo.OpenArray">
+            <summary>
+            Array of the Open price values
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.Yahoo.HighArray">
+            <summary>
+            Array of the High price values
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.Yahoo.LowArray">
+            <summary>
+            Array of the Low price values
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.Yahoo.CloseArray">
+            <summary>
+            Array of the Close price values 
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.Yahoo.AdjCloseArray">
+            <summary>
+            Array of the Adjusted Close price values
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.Yahoo.VolumeArray">
+            <summary>
+            Array of the Volume values
+            </summary>
+        </member>
+        <member name="P:HistoricalData.Source.Yahoo.Assets">
+            <summary>
+            Array of Asset objects returned from query. 
+            </summary>
+        </member>
+        <member name="M:HistoricalData.Source.Yahoo.GetHistoricalData">
+            <summary>
+            Makes API call to Yahoo Finance
+            </summary>
+            <returns>Asset Array</returns>
+        </member>
+    </members>
+</doc>
