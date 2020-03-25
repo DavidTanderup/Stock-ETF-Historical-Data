@@ -104,10 +104,10 @@ namespace HistoricalData.Source
                     {
                         Date = historicalData[i]["date"].Value<DateTime>(),
                         // retrieves the value as a string IOT remove the '$' before conversion to decimal
-                        Open = Convert.ToDecimal(historicalData[i]["open"].Value<string>().Remove(0, 1)),
-                        High = Convert.ToDecimal(historicalData[i]["high"].Value<string>().Remove(0, 1)),
-                        Low = Convert.ToDecimal(historicalData[i]["low"].Value<string>().Remove(0, 1)),
-                        Close = Convert.ToDecimal(historicalData[i]["close"].Value<string>().Remove(0, 1)),
+                        Open = Convert.ToDecimal(historicalData[i]["open"].Value<string>()),
+                        High = Convert.ToDecimal(historicalData[i]["high"].Value<string>()),
+                        Low = Convert.ToDecimal(historicalData[i]["low"].Value<string>()),
+                        Close = Convert.ToDecimal(historicalData[i]["close"].Value<string>()),
                         // retrieves the value as a string IOT remove the ',' to convert to a ulong
                         Volume = Convert.ToUInt64(Convert.ToDecimal(historicalData[i]["volume"].Value<string>(), new CultureInfo("en-US")))
 

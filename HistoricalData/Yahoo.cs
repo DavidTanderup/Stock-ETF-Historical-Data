@@ -23,7 +23,7 @@ namespace HistoricalData.Source
         {
             Symbol = symbol;
             StartDate = (int)(start - _origin).TotalSeconds;
-            EndDate = (int)(end - _origin).TotalSeconds;
+            EndDate = (int)(end - _origin).TotalSeconds+86400;
             if (StartDate >= EndDate)
             {
                 Exception paradox = new Exception($"A time paradox has occured the end date {EndDate} is before the start date {StartDate}.\n" +
@@ -101,7 +101,7 @@ namespace HistoricalData.Source
 
             int assetsArraySize = dates.Length;
             Asset[] assets = new Asset[assetsArraySize];
-            int index = assetsArraySize - 1;
+            int index = assetsArraySize-1;
             for (int i = 0; i < dates.Length; i++)
             {
                 Asset asset = new Asset()
