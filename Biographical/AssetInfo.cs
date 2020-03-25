@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Net;
+using System.Text.RegularExpressions;
 
 namespace HistoricalData.Biographical
 {/// <summary>
@@ -29,12 +30,12 @@ namespace HistoricalData.Biographical
 
             // get the "primary data" subset from the data subset in the current json file
             var primaryData = data["primaryData"];
-            LastSalePrice = Convert.ToDecimal(primaryData["lastSalePrice"].Value<string>().Remove(0, 1));
-            NetChange = primaryData["netChange"].Value<decimal>();
-            PercentChange = Convert.ToDecimal(primaryData["percentageChange"].Value<string>().Replace('%', ' ').TrimEnd());
-            Delta = primaryData["deltaIndicator"].Value<string>();
-            LastTradeTime = Convert.ToDateTime(primaryData["lastTradeTimestamp"].Value<string>().Remove(0, 11).Replace("ET", " ").TrimStart().TrimEnd());
-            IsRealTime = primaryData["isRealTime"].Value<bool>();
+            LastSalePrice = Unchanged(primaryData["lastSalePrice"].Value<string>().Remove(0, 1));
+            NetChange = Unchanged(primaryData["netChange"].Value<string>());
+            PercentChange = Unchanged(primaryData["percentageChange"].Value<string>().Replace('%', ' ').TrimEnd());
+            Delta = primaryData["deltaIndicator"].Value<string>();  
+            LastTradeTime = Convert.ToDateTime(Regex.Match(primaryData["lastTradeTimestamp"].Value<string>(), @"(\s{1}(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s{1}\d{1,2},\s{1}\d{4}\s{1}\d{1,2}:\d{1,2}\s{1}(AM|PM))").Value);
+            IsRealTime = primaryData["isRealTime"].Value<bool>();            
         }
         private string Info { get; set; }
 
@@ -138,6 +139,19 @@ namespace HistoricalData.Biographical
             return assetinfo;
         }
 
+        private decimal Unchanged(string parameter)
+        {
+            decimal status;
+            if (parameter.Contains("unch"))
+            {
+                status = 0;
+            }
+            else
+            {
+                status = Convert.ToDecimal(parameter);
+            }
+            return status;
+        }
 
     }
 }
