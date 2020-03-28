@@ -16,7 +16,7 @@ namespace HistoricalData.Biographical
         /// <param name="symbol">Ticker ID for the desired asset.</param>
         public AssetInfo(string symbol)
         {
-            Symbol = symbol;
+            Symbol = symbol.ToUpper();
             Info = GetInfo();
             // Get the "data" subset of the Json file
             var data = JObject.Parse(Info)["data"];
@@ -34,7 +34,7 @@ namespace HistoricalData.Biographical
             NetChange = Unchanged(primaryData["netChange"].Value<string>());
             PercentChange = Unchanged(primaryData["percentageChange"].Value<string>().Replace('%', ' ').TrimEnd());
             Delta = primaryData["deltaIndicator"].Value<string>();  
-            LastTradeTime = Convert.ToDateTime(Regex.Match(primaryData["lastTradeTimestamp"].Value<string>(), @"(\s{1}(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s{1}\d{1,2},\s{1}\d{4}\s{1}\d{1,2}:\d{1,2}\s{1}(AM|PM))").Value);
+            LastTradeTime = Convert.ToDateTime(Regex.Match(primaryData["lastTradeTimestamp"].Value<string>(), @"(\s{1}(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s{1}\d{1,2},\s{1}\d{4}\s{1}\d{1,2}:\d{1,2}\s{1}(AM|PM)|\s{1}(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s{1}\d{1,2},\s{1}\d{4})").Value);
             IsRealTime = primaryData["isRealTime"].Value<bool>();            
         }
         private string Info { get; set; }
@@ -142,7 +142,7 @@ namespace HistoricalData.Biographical
         private decimal Unchanged(string parameter)
         {
             decimal status;
-            if (parameter.Contains("unch"))
+            if (parameter.ToUpper().Contains("UNCH")|| parameter == "")
             {
                 status = 0;
             }

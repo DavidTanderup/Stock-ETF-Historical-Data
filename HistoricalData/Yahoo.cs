@@ -21,7 +21,7 @@ namespace HistoricalData.Source
         /// <param name="end">End of query date range.</param>
         public Yahoo(string symbol, DateTime start, DateTime end) : base(symbol)
         {
-            Symbol = symbol;
+            Symbol = symbol.Replace('.','-');
             StartDate = (int)(start - _origin).TotalSeconds;
             EndDate = (int)(end - _origin).TotalSeconds+86400;
             if (StartDate >= EndDate)

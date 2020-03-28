@@ -4,6 +4,7 @@ using System;
 using System.Globalization;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 
 namespace HistoricalData.Source
 {
@@ -104,14 +105,14 @@ namespace HistoricalData.Source
                     {
                         Date = historicalData[i]["date"].Value<DateTime>(),
                         // retrieves the value as a string IOT remove the '$' before conversion to decimal
-                        Open = Convert.ToDecimal(historicalData[i]["open"].Value<string>()),
-                        High = Convert.ToDecimal(historicalData[i]["high"].Value<string>()),
-                        Low = Convert.ToDecimal(historicalData[i]["low"].Value<string>()),
-                        Close = Convert.ToDecimal(historicalData[i]["close"].Value<string>()),
+                        Open = Convert.ToDecimal(Regex.Match(historicalData[i]["open"].Value<string>(), @"(\d{0,6}\.\d{1,2}|\d{1,6})").Value),
+                        High = Convert.ToDecimal(Regex.Match(historicalData[i]["high"].Value<string>(), @"(\d{0,6}\.\d{1,2}|\d{1,6})").Value),
+                        Low = Convert.ToDecimal(Regex.Match(historicalData[i]["low"].Value<string>(), @"(\d{0,6}\.\d{1,2}|\d{1,6})").Value),
+                        Close = Convert.ToDecimal(Regex.Match(historicalData[i]["close"].Value<string>(), @"(\d{0,6}\.\d{1,2}|\d{1,6})").Value),
                         // retrieves the value as a string IOT remove the ',' to convert to a ulong
                         Volume = Convert.ToUInt64(Convert.ToDecimal(historicalData[i]["volume"].Value<string>(), new CultureInfo("en-US")))
-
                     };
+
                 }
                 return assets;
             }

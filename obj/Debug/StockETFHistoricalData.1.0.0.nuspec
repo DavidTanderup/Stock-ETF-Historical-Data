@@ -19,8 +19,7 @@ Gives Biographical info on an Asset from the Nasdaq Asset info API.</description
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\Administrator\source\repos\NasdaqAssetData\bin\Release\netcoreapp3.1\HistoricalData.dll" target="lib\netcoreapp3.1\HistoricalData.dll" />
-    <file src="C:\Users\Administrator\source\repos\NasdaqAssetData\bin\Release\netcoreapp3.1\HistoricalData.xml" target="lib\netcoreapp3.1\HistoricalData.xml" />
+    <file src="C:\Users\Administrator\source\repos\NasdaqAssetData\bin\Debug\netcoreapp3.1\HistoricalData.dll" target="lib\netcoreapp3.1\HistoricalData.dll" />
     <file src="C:\Users\Administrator\source\repos\NasdaqAssetData\OpenSourceLicense.txt" target="OpenSourceLicense.txt" />
   </files>
 </package>

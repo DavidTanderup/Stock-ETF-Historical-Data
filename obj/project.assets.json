@@ -56,13 +56,13 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.1.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Source\\Repos\\NasdaqAssetData\\HistoricalData.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\NasdaqAssetData\\HistoricalData.csproj",
       "projectName": "StockETFHistoricalData",
-      "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\NasdaqAssetData\\HistoricalData.csproj",
+      "projectPath": "C:\\Users\\Administrator\\source\\repos\\NasdaqAssetData\\HistoricalData.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Source\\Repos\\NasdaqAssetData\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\source\\repos\\NasdaqAssetData\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -77,6 +77,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\Administrator\\source\\repos\\NasdaqAssetData\\bin\\Release": {},
         "http://packagesource": {},
         "https://api.nuget.org/v3/index.json": {}
       },

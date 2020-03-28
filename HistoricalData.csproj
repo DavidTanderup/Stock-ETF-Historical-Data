@@ -12,16 +12,25 @@ Gives Biographical info on an Asset from the Nasdaq Asset info API.</Description
     <Authors>OpenSource BlackBox Trading</Authors>
     <Company>OpenSource BlackBox Trading</Company>
     <Product>Stock and ETF Historical Data</Product>
-    <Copyright>none</Copyright>
+    <Copyright>2020</Copyright>
     <PackageTags>Historical Data; Stock Data; ETF Data; Nasdaq; Yahoo Finance; WallStreet Journal; Stock Trading; Historical Data API</PackageTags>
     <SignAssembly>true</SignAssembly>
     <PackageId>StockETFHistoricalData</PackageId>
     <PackageLicenseFile>OpenSourceLicense.txt</PackageLicenseFile>
+    <Version>1.1.0</Version>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DavidTanderup/Stock-ETF-Historical-Data</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>C:\Users\Administrator\Source\Repos\NasdaqAssetData\HistoricalData.xml</DocumentationFile>
     <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\Administrator\source\repos\NasdaqAssetData\HistoricalData.xml</DocumentationFile>
+    <OutputPath>obj\Release\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

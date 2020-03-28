@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>StockETFHistoricalData</id>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <authors>OpenSource BlackBox Trading</authors>
     <owners>OpenSource BlackBox Trading</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
@@ -10,8 +10,9 @@
     <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
     <description>Provides easy access to the Nasdaq, Yahoo Finance, and WallStreet Journal API for historical stock data.
 Gives Biographical info on an Asset from the Nasdaq Asset info API.</description>
-    <copyright>none</copyright>
+    <copyright>2020</copyright>
     <tags>Historical Data Stock Data ETF Data Nasdaq Yahoo Finance WallStreet Journal Stock Trading Historical Data API</tags>
+    <repository type="GitHub" url="https://github.com/DavidTanderup/Stock-ETF-Historical-Data" />
     <dependencies>
       <group targetFramework=".NETCoreApp3.1">
         <dependency id="Newtonsoft.Json" version="12.0.3" exclude="Build,Analyzers" />
