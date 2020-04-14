@@ -17,14 +17,15 @@ Gives Biographical info on an Asset from the Nasdaq Asset info API.</Description
     <SignAssembly>true</SignAssembly>
     <PackageId>StockETFHistoricalData</PackageId>
     <PackageLicenseFile>OpenSourceLicense.txt</PackageLicenseFile>
-    <Version>1.1.0</Version>
+    <Version>1.2.1</Version>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/DavidTanderup/Stock-ETF-Historical-Data</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
+    <PackageReleaseNotes>Changes the volume data type from ulong to long to allow easier sync with the Technical Indicators in a future Open Source Black Box Trading NuGet package release.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\Users\Administrator\Source\Repos\NasdaqAssetData\HistoricalData.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\HistoricalData.xml</DocumentationFile>
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
 

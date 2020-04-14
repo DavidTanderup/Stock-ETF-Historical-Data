@@ -73,7 +73,7 @@ namespace HistoricalData.Source
         /// <summary>
         /// Array of the Volume values
         /// </summary>
-        public ulong[] VolumeArray { get; }
+        public long[] VolumeArray { get; }
       
         /// <summary>
         /// Array of Asset objects returned from query. 
@@ -112,7 +112,7 @@ namespace HistoricalData.Source
                     Low = Math.Round(table["low"][i].Value<decimal>(), 2),
                     Close = Math.Round(table["close"][i].Value<decimal>(), 2),
                     AdjClose = Math.Round(JObject.Parse(doc)["chart"]["result"][0]["indicators"]["adjclose"][0]["adjclose"][i].Value<decimal>(), 2),
-                    Volume = table["volume"][i].Value<ulong>(),
+                    Volume = table["volume"][i].Value<long>(),
 
                 };
 

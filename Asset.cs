@@ -34,7 +34,7 @@ namespace HistoricalData
         /// <summary>
         /// Number of shares traded during market session
         /// </summary>
-        public ulong Volume { get; set; }
+        public long Volume { get; set; }
 
     }
 }

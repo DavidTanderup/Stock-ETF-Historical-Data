@@ -80,7 +80,7 @@ namespace HistoricalData.Source
         /// <summary>
         /// Array of the Volume values
         /// </summary>
-        public ulong[] VolumeArray { get; }
+        public long[] VolumeArray { get; }
 
 
         // makes the API call to NASDAQ server for historical data
@@ -110,7 +110,7 @@ namespace HistoricalData.Source
                         Low = Convert.ToDecimal(Regex.Match(historicalData[i]["low"].Value<string>(), @"(\d{0,6}\.\d{1,2}|\d{1,6})").Value),
                         Close = Convert.ToDecimal(Regex.Match(historicalData[i]["close"].Value<string>(), @"(\d{0,6}\.\d{1,2}|\d{1,6})").Value),
                         // retrieves the value as a string IOT remove the ',' to convert to a ulong
-                        Volume = Convert.ToUInt64(Convert.ToDecimal(historicalData[i]["volume"].Value<string>(), new CultureInfo("en-US")))
+                        Volume = Convert.ToInt64(Convert.ToDecimal(historicalData[i]["volume"].Value<string>(), new CultureInfo("en-US")))
                     };
 
                 }

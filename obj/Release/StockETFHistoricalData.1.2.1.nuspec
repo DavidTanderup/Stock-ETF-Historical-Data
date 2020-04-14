@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>StockETFHistoricalData</id>
+    <version>1.2.1</version>
+    <authors>OpenSource BlackBox Trading</authors>
+    <owners>OpenSource BlackBox Trading</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="file">OpenSourceLicense.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <description>Provides easy access to the Nasdaq, Yahoo Finance, and WallStreet Journal API for historical stock data.
+Gives Biographical info on an Asset from the Nasdaq Asset info API.</description>
+    <releaseNotes>Changes the volume data type from ulong to long to allow easier sync with the Technical Indicators in a future Open Source Black Box Trading NuGet package release.</releaseNotes>
+    <copyright>2020</copyright>
+    <tags>Historical Data Stock Data ETF Data Nasdaq Yahoo Finance WallStreet Journal Stock Trading Historical Data API</tags>
+    <repository type="GitHub" url="https://github.com/DavidTanderup/Stock-ETF-Historical-Data" />
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="Newtonsoft.Json" version="12.0.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Davet\Source\Repos\Stock-ETF-Historical-Data\bin\Release\netcoreapp3.1\HistoricalData.dll" target="lib\netcoreapp3.1\HistoricalData.dll" />
+    <file src="C:\Users\Davet\Source\Repos\Stock-ETF-Historical-Data\bin\Release\netcoreapp3.1\HistoricalData.xml" target="lib\netcoreapp3.1\HistoricalData.xml" />
+    <file src="C:\Users\Davet\Source\Repos\Stock-ETF-Historical-Data\OpenSourceLicense.txt" target="OpenSourceLicense.txt" />
+  </files>
+</package>

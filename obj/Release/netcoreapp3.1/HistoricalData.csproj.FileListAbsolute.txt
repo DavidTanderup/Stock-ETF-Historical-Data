@@ -7,3 +7,11 @@ C:\Users\Administrator\source\repos\NasdaqAssetData\obj\Release\netcoreapp3.1\Hi
 C:\Users\Administrator\source\repos\NasdaqAssetData\obj\Release\netcoreapp3.1\HistoricalData.AssemblyInfo.cs
 C:\Users\Administrator\source\repos\NasdaqAssetData\obj\Release\netcoreapp3.1\HistoricalData.dll
 C:\Users\Administrator\source\repos\NasdaqAssetData\obj\Release\netcoreapp3.1\HistoricalData.pdb
+C:\Users\Davet\Source\Repos\Stock-ETF-Historical-Data\bin\Release\netcoreapp3.1\HistoricalData.deps.json
+C:\Users\Davet\Source\Repos\Stock-ETF-Historical-Data\bin\Release\netcoreapp3.1\HistoricalData.dll
+C:\Users\Davet\Source\Repos\Stock-ETF-Historical-Data\bin\Release\netcoreapp3.1\HistoricalData.pdb
+C:\Users\Davet\Source\Repos\Stock-ETF-Historical-Data\bin\Release\netcoreapp3.1\HistoricalData.xml
+C:\Users\Davet\Source\Repos\Stock-ETF-Historical-Data\obj\Release\netcoreapp3.1\HistoricalData.AssemblyInfoInputs.cache
+C:\Users\Davet\Source\Repos\Stock-ETF-Historical-Data\obj\Release\netcoreapp3.1\HistoricalData.AssemblyInfo.cs
+C:\Users\Davet\Source\Repos\Stock-ETF-Historical-Data\obj\Release\netcoreapp3.1\HistoricalData.dll
+C:\Users\Davet\Source\Repos\Stock-ETF-Historical-Data\obj\Release\netcoreapp3.1\HistoricalData.pdb

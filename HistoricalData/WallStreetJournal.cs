@@ -75,7 +75,7 @@ namespace HistoricalData.Source
         /// <summary>
         /// Array of the Volume values
         /// </summary>
-        public ulong[] VolumeArray { get; }
+        public long[] VolumeArray { get; }
 
 
         // start date for class internal 
@@ -117,7 +117,7 @@ namespace HistoricalData.Source
                     High = Convert.ToDecimal(vs[i].Split(',')[2]),
                     Low = Convert.ToDecimal(vs[i].Split(',')[3]),
                     Close = Convert.ToDecimal(vs[i].Split(',')[4]),
-                    Volume = Convert.ToUInt64(Convert.ToDouble(vs[i].Split(',')[5]))
+                    Volume = Convert.ToInt64(Convert.ToDouble(vs[i].Split(',')[5]))
                 };
             }
             return assets;
